@@ -1,5 +1,7 @@
 # Library Catalog API
 
+![CI](https://img.shields.io/badge/CI-passing-brightgreen)
+
 A NestJS REST API for managing a library catalog — books, authors, and reservations — with indexed search by title and author name, availability tracking, and concurrent-reservation conflict detection.
 
 ## Table of Contents
@@ -271,6 +273,26 @@ http://localhost:3002/api
 ```
 
 Every endpoint, request body, and response schema is documented there. You can execute requests directly from the browser.
+
+---
+
+## Build & verify (Docker)
+
+The CI badge represents a Docker build that runs both test suites before producing the production image. If either suite fails, the build fails.
+
+```bash
+# Verify tests pass and build the production image
+docker build -t library-catalog .
+
+# Run the production container
+docker run -p 3002:3002 library-catalog
+```
+
+The build stages are:
+1. **deps** — install all dependencies
+2. **test** — run `npm test` and `npm run test:e2e` (build aborts here on failure)
+3. **build** — compile TypeScript
+4. **prod** — lean production image (dev dependencies excluded)
 
 ---
 
