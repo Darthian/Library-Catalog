@@ -1,3 +1,9 @@
+<!-- 
+PROMPT USED
+I want to create a backend project with NestJs. The project will be a service to manage a library catalog. The idea is manage books, authors, and simple reservations.
+The focus is reliable search and correct filtering under edge cases. This project will be a REST API implementing a CRUD for books and authors. Also I need to implement the functionality for full-text search or simple indexed search by title and author. Implement the swagger configuration for interact with. Alse I need to define a skill for agentic called 'reservation-lifecycle-test' with this behivor: given an entity name and route, generate a complete integration test covering create, reserve, concurrent-reserve conflict, and cancel
+-->
+
 # Library Catalog API
 
 ![CI](https://img.shields.io/badge/CI-passing-brightgreen)
